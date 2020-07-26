@@ -1,12 +1,20 @@
 import React, { Fragment } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
 
 function App() {
   // undefined값일때 보이는 문구!
   // const name = undefined;
   // return <div>{name || 'react'}</div>;
   const name = "재휘";
+  // remove dash and make it camelCase
+  // font-size => fontSize
+  // const style = {
+  //   backgroundColor: 'black',
+  //   color: 'aqua',
+  //   fontSize: '48px',
+  //   fontWeight: 'bold',
+  //   padding: 16, // px if without unit
+  // }
   return (
     // 하나의 부모 요소가 없음으로 에러
     // <h1>안뇽 리액트!</h1>
@@ -40,10 +48,22 @@ function App() {
     // </>
     
     // &&연산자를 사용하여 조건부 렌더
-    <>
-      {name === "재휘" && <h1>{name} 안뇽!</h1>}
-      {/* 예외: false값인 0는 화면에 표시! */}
-    </>
+    // <>
+    //   {name === "재휘" && <h1>{name} 안뇽!</h1>}
+    //   {/* 예외: false값인 0는 화면에 표시! */}
+    // </>
+
+    // in-line styling
+    // <div style={{
+    //   backgroundColor: 'black',
+    //   color: 'aqua',
+    //   fontSize: '48px',
+    //   fontWeight: 'bold',
+    //   padding: 16, // px if without unit
+    // }}>{name}</div>
+
+    // using css class
+    <div className="react">{name}</div>
   );
 }
 
