@@ -32,4 +32,3 @@ Component - Props
   * -문자를 없애고 camelCase표기법으로 작성
 * JSX에서는 class가 아닌 className으로 설정 (Do-able, but warning)
 * Self-closing Tag - 태그 사이에 별도의 내용이 들어가지 않을때 사용
-* 주석 → {/*...*/}사용
