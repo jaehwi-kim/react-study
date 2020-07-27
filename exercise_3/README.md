@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Exercise 3
 
-## Available Scripts
+Component - state
 
-In the project directory, you can run:
+### State
 
-### `npm start`
+* state - 컴포넌트 내부에서 바뀔 수 있는 값
+  * props는 컴포넌트가 사용되는 과정에서 부모가 설정, 컴포넌트는 읽기전용으로만 사용
+  * props를 바꾸려면 부모 컴포넌트에서 바꿔 주어야함
+* 클래스형 컴포넌트의 state
+  * 컴포넌트에서 state를 설정시 constructor메서드를 작성하여 설정
+    * super(props)를 호출하여 현재 클래스형 컴포넌트가 상속 받고 있는 리액트의 Component클래스가 지닌 생성자 함수를 호출
+  * 현재 state를 조회할 때는 this.state를 조회
+  * this.setState - state값을 바꿈
+  * state객체 안에 여러 값이 있을 수 있음
+    * () => {}
+    * 기존 function이랑 사용 용도가 다름!
+    * **일반 함수는 자신이 종속된 객체를 this로 가르키며, 화살표 함수는 자신이 종속된 인스턴스를 가르킴**
+    * 화살표 함수가 더 간결
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Props
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Props - properties, 컴포넌스 속성을 설정
+  * props의 값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서 설정
+* defaultProps - 값을 따로 지정하지 않았을때 보여주는 기본 값
+* children - 컴포넌트 태그 사이의 내용을 보여줌
+* ES6 비구조화 할당(destructuring assignment) 문법 (ex. const {name, children} = props)
+* propTypes - props의 타입을 지정
+  * isRequired - propTypes를 지정하지 않았을때 경고 메시지, 필수 props로 지정
+* 클래스형 컴포넌트에서 props사용 - render함수에서 this.props를 조회
+  * defaultProps와 propTypes는 class내부에서 지정 가능!
+* defaultProps와 propTypes는 컴포넌트의 필수 사항은 아님, but 협업이나 큰 규모의 프로젝트 진행시 개발능률 up!
