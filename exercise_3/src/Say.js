@@ -6,6 +6,12 @@ const Say = () => {
     const onClickLeave = () => setMsg('bye');
     const [color, setColor] = useState('black');
 
+    // spread는 shallow copy! deep copy를 하고싶으면 다른 방법을 찾아보자
+    const object = { a: {b : 3}};
+    let copyObj = {...object};
+    copyObj.a.b = 0;
+    console.log(object.a.b)
+    
     return (
         <div>
             <button onClick={onClickEnter}>enter</button>

@@ -13,20 +13,22 @@ Component - state
   * 현재 state를 조회할 때는 this.state를 조회
   * this.setState - state값을 바꿈
   * state객체 안에 여러 값이 있을 수 있음
-    * () => {}
-    * 기존 function이랑 사용 용도가 다름!
-    * **일반 함수는 자신이 종속된 객체를 this로 가르키며, 화살표 함수는 자신이 종속된 인스턴스를 가르킴**
-    * 화살표 함수가 더 간결
+  * this.setState로 state값 변셩시 상태가 비동기적으로 업데이트 → this.setState를 사용할때 객체 대신 함수를 넣어 해결
+    * this.setState의 두번째 파라미터로 callback함수를 등록하여 작업처리 가능 (setState끝난 후 작업처리)
+* 함수형 컴포넌트의 useState
+  * useState라는 함수를 사용하여 함수형 컴포넌트에도 state를 사용할 수 있게 됨
+  * 배열 비구조화 할당 (destructuring assignment) - 배열 안에 들어 있는 값을 쉽게 추출
+  * useState → 인자에는 상태의 초깃값, 객체가 아니어도 상관 없음
+    * 호출 후 배열이 반환, 첫번째 원소는 현재 상태, 두번째 원소는 상태를 바꾸어주는 함수
+    * ex. const [msg, setMsg] = useState('initial')
+    * useState는 한 컴포넌트에서 여러번 사용 가능
+* state사용시 주의 사항
+  * state를 바꿔야 할때는 setState혹은 useState를 통해 전달받은 세터 함수를 사용!
+  * 배열이나 객체를 업데이트시 사본을 만들고 값 업데이트 후, 사본의 상태를 setState/세터 함수
+  * ex. const object = {a: 1, b: 2, c: 3}; const nextObj = {...object, b: 2}; // 사본을 만들어 값을 덮어 쓰기
+  * spread → ...을 사용하여 사본을 생성
 
-### Props
+### Props vs. State
 
-* Props - properties, 컴포넌스 속성을 설정
-  * props의 값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서 설정
-* defaultProps - 값을 따로 지정하지 않았을때 보여주는 기본 값
-* children - 컴포넌트 태그 사이의 내용을 보여줌
-* ES6 비구조화 할당(destructuring assignment) 문법 (ex. const {name, children} = props)
-* propTypes - props의 타입을 지정
-  * isRequired - propTypes를 지정하지 않았을때 경고 메시지, 필수 props로 지정
-* 클래스형 컴포넌트에서 props사용 - render함수에서 this.props를 조회
-  * defaultProps와 propTypes는 class내부에서 지정 가능!
-* defaultProps와 propTypes는 컴포넌트의 필수 사항은 아님, but 협업이나 큰 규모의 프로젝트 진행시 개발능률 up!
+* props는 부모 컴포넌트가 설정
+* state는 컴포넌트 자체적으로 지닌 값으로 컴포넌트 내부에서 값을 업데이트
