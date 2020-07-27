@@ -4,7 +4,7 @@ import './App.css'
 
 const App = () => {
   return (
-    <MyComponent name = "React" favoriteNumber={1}>
+    <MyComponent favoriteNumber={1}>
       리액트
     </MyComponent>
   )
