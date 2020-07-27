@@ -27,3 +27,4 @@
   * 에러시 에러가 발생했다고 사용자에게 인지
   * 에러가 발생하면 componentDidCatch메서드가 호출됨, this.state.error값을 true로 업데이트, render함수가 this.state.error가 true면 에러 문구 생성
 * 라이프사이클 메서드 - 서드파티 라이브러리를 사용하거나 DOM을 직접 건드려야 하는 상황에서 유용
+![메서드 흐름](https://thebook.io/img/080203/188.jpg)
