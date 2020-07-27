@@ -16,19 +16,16 @@ Component - Props
     * () => {}
     * 기존 function이랑 사용 용도가 다름!
     * **일반 함수는 자신이 종속된 객체를 this로 가르키며, 화살표 함수는 자신이 종속된 인스턴스를 가르킴**
+    * 화살표 함수가 더 간결
 
+### Props
 
-### JSX
-
-* JSX - 자바스크립트의 확장문법, 번들링중 바벨로 자바스크립트 코드로 변환
-* 보기 쉽고 익숙함, 더 높은 활용도
-* **부모요소하나!**
-  * Virtual DOM에서 컴포넌트 변화를 감지할때 효율적으로 배교
-  * Fragment컴포넌트로 div대체 가능
-* JSX안에 JS표현식 → {...}로 감싸기
-* JSX내 JS if문 사용불가, ? 사용하여 조건부 연산
-* flasy한 **값**인 0은 화면에 나타남
-* 인라인 스타일링
-  * -문자를 없애고 camelCase표기법으로 작성
-* JSX에서는 class가 아닌 className으로 설정 (Do-able, but warning)
-* Self-closing Tag - 태그 사이에 별도의 내용이 들어가지 않을때 사용
+* Props - properties, 컴포넌스 속성을 설정
+  * props의 값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서 설정
+* defaultProps - 값을 따로 지정하지 않았을때 보여주는 기본 값
+* children - 컴포넌트 태그 사이의 내용을 보여줌
+* ES6 비구조화 할당(destructuring assignment) 문법 (ex. const {name, children} = props)
+* propTypes - props의 타입을 지정
+  * isRequired - propTypes를 지정하지 않았을때 경고 메시지, 필수 props로 지정
+* 클래스형 컴포넌트에서 props사용 - render함수에서 this.props를 조회
+  * defaultProps와 propTypes는 class내부에서 지정 가능!
