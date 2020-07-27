@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Exercise 1
 
-## Available Scripts
+Component - Props
 
-In the project directory, you can run:
+### 클래스형/함수형 컴포넌트
 
-### `npm start`
+* 클래스형 컴포넌트
+  * state기능 및 라이프사이클 기능, 임의 메서드 정의 사용 가능
+  * render함수 꼭 필요!
+* 함수형 컴포넌트
+  * 선언하기 편함
+  * 메모리 자원도 비교적 덜 사용
+  * state와 라이프사이클 API사용 불가능 → Hooks기능으로 해결
+* ES6
+  * 화살표 함수
+    * () => {}
+    * 기존 function이랑 사용 용도가 다름!
+    * **일반 함수는 자신이 종속된 객체를 this로 가르키며, 화살표 함수는 자신이 종속된 인스턴스를 가르킴**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### JSX
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* JSX - 자바스크립트의 확장문법, 번들링중 바벨로 자바스크립트 코드로 변환
+* 보기 쉽고 익숙함, 더 높은 활용도
+* **부모요소하나!**
+  * Virtual DOM에서 컴포넌트 변화를 감지할때 효율적으로 배교
+  * Fragment컴포넌트로 div대체 가능
+* JSX안에 JS표현식 → {...}로 감싸기
+* JSX내 JS if문 사용불가, ? 사용하여 조건부 연산
+* flasy한 **값**인 0은 화면에 나타남
+* 인라인 스타일링
+  * -문자를 없애고 camelCase표기법으로 작성
+* JSX에서는 class가 아닌 className으로 설정 (Do-able, but warning)
+* Self-closing Tag - 태그 사이에 별도의 내용이 들어가지 않을때 사용
+* 주석 → {/*...*/}사용
