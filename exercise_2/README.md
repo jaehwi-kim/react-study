@@ -1,4 +1,4 @@
-## Exercise 1
+## Exercise 2
 
 Component - Props
 
@@ -29,3 +29,4 @@ Component - Props
   * isRequired - propTypes를 지정하지 않았을때 경고 메시지, 필수 props로 지정
 * 클래스형 컴포넌트에서 props사용 - render함수에서 this.props를 조회
   * defaultProps와 propTypes는 class내부에서 지정 가능!
+* defaultProps와 propTypes는 컴포넌트의 필수 사항은 아님, but 협업이나 큰 규모의 프로젝트 진행시 개발능률 up!
