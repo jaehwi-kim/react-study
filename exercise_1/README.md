@@ -33,7 +33,7 @@ create-react-app ~ JSX
   * Fragment컴포넌트로 div대체 가능
 * JSX안에 JS표현식 → {...}로 감싸기
 * JSX내 JS if문 사용불가, ? 사용하여 조건부 연산
-* flasy한 **값**인 0은 화면에 나타남
+* falsy한 **값**인 0은 화면에 나타남
 * 인라인 스타일링
   * -문자를 없애고 camelCase표기법으로 작성
 * JSX에서는 class가 아닌 className으로 설정 (Do-able, but warning)
