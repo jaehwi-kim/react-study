@@ -1,6 +1,6 @@
 ## Exercise 8
 
-Reack Hooks
+React Hooks
 
 ### Hooks
 
