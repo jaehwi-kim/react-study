@@ -34,3 +34,26 @@ React App using redux
   * connect함수를 사용시 일반적으로 mapStateToProps와 mapDispatchToProps를 미리 선언해 놓고 사용
 * bindActionCreators - 유틸 함수로 각 액션 생성 함수를 묶음
   * connect의 두번째 파라미터에 아예 객체 행태로 넣우주면 connect함수가 내부적으로 bindActionCreators작업을 함
+* redux-actions - 액션 생성 함수를 더 짧은 코드로 작성 가능, 리듀서도 handleActions로 작성
+  * 각 액션 생성 함수에서 파라미터를 필요할시 - createAction의 두번째 함수에 payload를 정의하는 함수를 따로 선언
+* immer - 상황에 따라 상태 값들을 하나의 객체 안에 묶어서 넣는것이 코드의 가독성을 높이는데 유리, 리덕스 연동때 편함
+
+* redux store와 연동된 컨테이너 컴포넌트를 만들 때 connect함수를 사용 대신 react-redux에서 제공하는 Hooks사용 가능
+  * useSelector - const 결과 = useSelector(상태 선택 함수);
+    * 상태 선택 함수 - mapStateToProps와 형태 같음
+  * useDispatch - const dispatch = useDispatch(); dispatch({ type: 'SAMPLE_ACTION' });
+    * 숫자가 바뀌어서 컴포넌트가 리렌더링될 때마다 onIncrease/onDecrease함수가 새롭게 만들어짐
+  * useCallback - 컴포넌트 최적화 하기 위해 액션 디스패치 하는 함수를 감쌈
+    * useDispatch를 사용할 때는 useCallback과 함께 사용!
+  * useStore - 컴포넌트 내부에서 리덕스 스토어 객체를 직접 사용 가능 (흔치 않음)
+    * const store = useStore(); store.dispatch({ type: 'SAMPLE_ACTION '}); store.getState();
+  * useActions - 여러개의 액션을 사용해야 하는 경우 코드를 깔끔하게 정리
+    * 액션 생성 함수를 액션을 디스패치 하는 함수로 변환
+      * 액션 생성 함수를 사용하여 액션 객체를 만들고, 이를 스토어에 디스패치 하는 작업을 해줌
+    * 첫번째 파라미터: 액션 생성 함수로 이루어진 배열, 두번째 파라미터: deps 배열
+
+* connect 함수와의 주요 차이점
+  * connect vs. useSelector / useDispatch
+    * 편한것을 사용!
+    * connect함수를 사용하여 컨테이너 컴포넌트를 만들경우 - 해당 컨테이너 컴포넌트의 부모 컴포넌트가 리렌더링될때 해당 컨테이너 컴포넌트의 props가 바뀌지 않았다면 리렌더링이 자동으로 방지, 최적화
+    * useSelector 사용시 성능 최적화 하려면 React.memo를 컨테이너 컴포넌트에 사용해 줘야 함
