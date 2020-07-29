@@ -1,9 +1,27 @@
-import React, {  } from 'react';
+import React, { useState } from 'react';
+import loadable from '@loadable/component';
 
-const App = () => {
+const SplitMe = loadable(() => import('./SplitMe'), {
+    fallback: <div>loading...</div>
+});
+
+
+function App() {
+  const [visible, setVisible] = useState(false);
+  const onClick = () => {
+    setVisible(true);
+  };
+  const onMouseOver = () => {
+    SplitMe.preload();
+  };
   return (
-    <div></div>
-  )
+    <div>
+      <header>
+      <p onClick={onClick} onMouseOver={onMouseOver}>Hello React!</p>
+        {visible && <SplitMe />}
+      </header>
+    </div>
+  );
 }
 
 export default App;
