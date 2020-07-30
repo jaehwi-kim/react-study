@@ -1,7 +1,7 @@
 package test.springReact.todolist;
 // testing domain using @DataJpaTest
 // @DataJpaTest is JPA의 test를 지원하는 어노테이션, 테스트시 실행된 변경사항이 실제 DB에 반연되지 않음 - 테스트 하고 테스트 이전으로 롤백함
-
+// JpaMappingTest 클래스에서 JUnit 테스트 실행
 import java.time.LocalDateTime;
 
 // import testing libraries
