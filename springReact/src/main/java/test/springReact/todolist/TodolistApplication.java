@@ -19,8 +19,8 @@ public class TodolistApplication {
         SpringApplication.run(TodolistApplication.class, args);
     }
 
-    // bean으로 생성된 메서드에 파라미터로 Dependency Injection시키는 메커니즘
-    // CommandLineRunner를 빈으로 등록한 후 TodoRepository를 주입받음
+//     bean으로 생성된 메서드에 파라미터로 Dependency Injection시키는 메커니즘
+//     CommandLineRunner를 빈으로 등록한 후 TodoRepository를 주입받음
 //    @Bean
 //    public CommandLineRunner runner(TodoRepository todoRepository) throws Exception {
 //        // Java 8 ㄹ마다 표현식

@@ -6,5 +6,4 @@ package test.springReact.todolist.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import test.springReact.todolist.domain.Todo;
 
-public interface TodoRepository extends JpaRepository <Todo, Long>{
-}
+public interface TodoRepository extends JpaRepository <Todo, Long>{ }
