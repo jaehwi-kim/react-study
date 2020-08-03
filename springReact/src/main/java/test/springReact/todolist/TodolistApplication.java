@@ -21,17 +21,17 @@ public class TodolistApplication {
 
 //     bean으로 생성된 메서드에 파라미터로 Dependency Injection시키는 메커니즘
 //     CommandLineRunner를 빈으로 등록한 후 TodoRepository를 주입받음
-//    @Bean
-//    public CommandLineRunner runner(TodoRepository todoRepository) throws Exception {
-//        // Java 8 ㄹ마다 표현식
-//        return (args) -> {
-//            // Todo객체를 빌드 패턴을 사용하여 생성한 후 주입 받은 TodoRepository를 사용하여 Todo객체를 저장
-//            IntStream.rangeClosed(1, 10).forEach(index -> todoRepository.save(Todo.builder()
-//                    .content("오늘 할 일" + index)
-//                    .createdDateTime(LocalDateTime.now())
-//                    .isComplete(false)
-//                    .build())
-//            );
-//        };
-//    }
+    @Bean
+    public CommandLineRunner runner(TodoRepository todoRepository) throws Exception {
+        // Java 8 ㄹ마다 표현식
+        return (args) -> {
+            // Todo객체를 빌드 패턴을 사용하여 생성한 후 주입 받은 TodoRepository를 사용하여 Todo객체를 저장
+            IntStream.rangeClosed(1, 10).forEach(index -> todoRepository.save(Todo.builder()
+                    .content("오늘 할 일" + index)
+                    .createdDateTime(LocalDateTime.now())
+                    .isComplete(false)
+                    .build())
+            );
+        };
+    }
 }
