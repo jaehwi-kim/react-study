@@ -1,0 +1,15 @@
+web/mlpe_web/model/GatewayLogWithUnit.class
+web/mlpe_web/model/StringsLogWithUnit.class
+web/mlpe_web/model/CurrentPower.class
+web/mlpe_web/config/SwaggerConfig.class
+web/mlpe_web/model/GatewayLog.class
+web/mlpe_web/model/Devices.class
+web/mlpe_web/dao/MLPEMapper.class
+web/mlpe_web/model/TotalLog_DateTotalwh.class
+web/mlpe_web/model/ModulesLogWithUnit.class
+web/mlpe_web/model/StringsLog_DateTotalwh.class
+web/mlpe_web/model/StringsLog.class
+web/mlpe_web/controller/MLPEController.class
+web/mlpe_web/MlpeApplication.class
+web/mlpe_web/model/Timeframe.class
+web/mlpe_web/model/Energy.class
