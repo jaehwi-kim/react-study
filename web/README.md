@@ -1,1 +1,0 @@
-REST API와 Front-end를 위한 Project입니다.

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project name="maven-antrun-" default="main"  >
-<target name="main">
-  <copy todir="/Users/jaehwi95/Desktop/Projects/Spring/web/target/classes/public">
-    <fileset dir="/Users/jaehwi95/Desktop/Projects/Spring/web/frontend/build"/>
-  </copy>
-</target>
-</project>
